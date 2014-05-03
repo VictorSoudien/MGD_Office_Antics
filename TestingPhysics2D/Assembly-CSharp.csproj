@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\GameController.cs" />
      <Compile Include="Assets\MoveByDragging.cs" />
+     <Compile Include="Assets\PhysicsController.cs" />
      <Compile Include="Assets\SpringController.cs" />
      <Compile Include="Assets\TeleportPipe.cs" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />

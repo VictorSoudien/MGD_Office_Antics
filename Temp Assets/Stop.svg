@@ -1,0 +1,19 @@
+<?xml version="1.0"?><svg width="1000" height="1000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>stop button</title>
+ <defs>
+  <linearGradient id="linearGradient3634">
+   <stop offset="0" id="stop3636" stop-color="#004c91"/>
+   <stop offset="1" id="stop3638" stop-color="#00d7ff"/>
+  </linearGradient>
+  <linearGradient xlink:href="#linearGradient3634" id="linearGradient3648" x1="0.500017" y1="0.632544" x2="0.500017" y2="1.015415"/>
+ </defs>
+ <metadata id="metadata7">image/svg+xml</metadata>
+ <g>
+  <title>Layer 1</title>
+  <g id="g3644" transform="matrix(22.7091, 0, 0, 22.7091, -10368.4, -16813.6)">
+   <path d="m499.908813,762.409607c0,11.797119 -9.563507,21.360596 -21.360626,21.360596c-11.79718,0 -21.360626,-9.563477 -21.360626,-21.360596c0,-11.79718 9.563446,-21.360657 21.360626,-21.360657c11.797119,0 21.360626,9.563477 21.360626,21.360657z" id="path3632" stroke-miterlimit="4" stroke-width="0.99962" stroke="#000091" fill="url(#linearGradient3648)"/>
+   <path id="path3642" d="m457.878143,761.962097c-0.032196,4.071472 13.676147,-3.283386 19.821411,-3.214294c6.047668,0.067993 21.517883,7.9552 21.517883,2.5c0,-7.536011 -6.851379,-19.384827 -20.446442,-19.464294c-13.595306,-0.079407 -20.822144,11.232056 -20.892853,20.178589z" fill-opacity="0.517857" fill="#ffffff"/>
+  </g>
+  <rect id="svg_1" height="409.18161" width="433.133721" y="297.405202" x="275.4491" stroke-width="5" stroke="#000000" fill="#ffffff"/>
+ </g>
+</svg>

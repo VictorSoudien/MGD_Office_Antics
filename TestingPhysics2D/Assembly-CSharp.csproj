@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CollisionWithBall.cs" />
+     <Compile Include="Assets\Scripts\FollowBall.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\MoveByDragging.cs" />
      <Compile Include="Assets\Scripts\PlayButtonScript.cs" />

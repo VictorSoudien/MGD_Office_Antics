@@ -18,6 +18,7 @@ public class ProgressToNextLevel : MonoBehaviour {
 		{
 			if (collider.gameObject.name.Equals("Ball"))
 			{
+				Debug.Log (this.collider2D.name);
 				GameController.addCoinsToTotal();			
 				Application.LoadLevel(indexOfNextScene);
 			}

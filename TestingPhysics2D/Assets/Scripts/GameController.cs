@@ -7,8 +7,11 @@ public class GameController : MonoBehaviour
 	private static int totalCoins; // All coins collected thus far in the game
 
 	private static GameObject[] coins;
+	private static GameObject[] placedInventory;
 	private static GameObject ball;
+	private static GameObject bin;
 	private static Vector3 initBallPosition;
+	private static Vector3 initBinPosition;
 	
 	private static AudioSource mainAudioSrc;
 	private static AudioSource coinCollectSrc;
@@ -35,13 +38,23 @@ public class GameController : MonoBehaviour
 	{	
 		coins = GameObject.FindGameObjectsWithTag("Coin");
 		ball = GameObject.FindGameObjectWithTag("Ball");
+		bin = GameObject.FindGameObjectWithTag ("Bin");
+
 		initBallPosition = ball.transform.position;
+		initBinPosition = bin.transform.position;
 	}
 	
 	// Allows gravity to act on the ball
 	public static void runTrial()
 	{
 		ball.rigidbody2D.isKinematic = false;
+
+		placedInventory = GameObject.FindGameObjectsWithTag ("PlacedInventory");
+
+		foreach (GameObject gameObj in placedInventory)
+		{
+			gameObj.GetComponent<MoveByDragging>().isMovable = false;
+		}
 	}
 	
 	// Resets the level in terms of ball posistion and  coins
@@ -52,11 +65,21 @@ public class GameController : MonoBehaviour
 		ball.rigidbody2D.angularVelocity = 0;
 		ball.rigidbody2D.velocity = Vector2.zero;
 		ball.rigidbody2D.isKinematic = true;
+
+		bin.transform.position = initBinPosition;
+		bin.transform.rotation = Quaternion.identity;
+		bin.rigidbody2D.angularVelocity = 0;
+		bin.rigidbody2D.velocity = Vector2.zero;
 		
 		// Add all coins back to the level and reset amount collected thus far
 		foreach (GameObject c in coins)
 		{
 			c.SetActive(true);
+		}
+
+		foreach (GameObject gameObj in placedInventory)
+		{
+			gameObj.GetComponent<MoveByDragging>().isMovable = true;
 		}
 		
 		tempCoins = 0;

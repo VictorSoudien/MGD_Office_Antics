@@ -18,7 +18,7 @@ public class PlayButtonScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Input.GetButton("Fire1"))
+		if (Input.GetButtonDown("Fire1"))
 		{
 			Vector3 target = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			Vector2 touch2D = new Vector2 (target.x, target.y);

@@ -8,6 +8,9 @@ public class MoveByDragging : MonoBehaviour {
 	private Animator animator;
 	private bool selected;
 	private GameObject selectionCircle;
+	
+	private BoxCollider2D touchCollider;
+	private Collider2D physicsCollider;
 
 	// Use this for initialization
 	void Start () 
@@ -17,11 +20,15 @@ public class MoveByDragging : MonoBehaviour {
 		isMovable = true;
 
 		selectionCircle = GameObject.Find ("SelectionCircle");
+		touchCollider = this.GetComponentInChildren<BoxCollider2D>();
+		physicsCollider = this.GetComponentInChildren<Collider2D>();
 	}
 
 	// Update is called once per frame
 	void Update () 
 	{
+		physicsCollider.enabled = true;
+		
 		if (isMovable == true) 
 		{
 			if (Input.GetButton ("Fire1") == true) 
@@ -49,7 +56,9 @@ public class MoveByDragging : MonoBehaviour {
 					}
 				}*/
 
-				if (this.collider2D == Physics2D.OverlapPoint (touch2D)) 
+				touchCollider.enabled = true;
+					
+				if ((touchCollider == Physics2D.OverlapPoint (touch2D)) || (physicsCollider == Physics2D.OverlapPoint (touch2D))) 
 				{
 					selected = true;
 				}
@@ -72,7 +81,8 @@ public class MoveByDragging : MonoBehaviour {
 		}
 		else
 		{
-			// Play sound here and vibrate phone
+			touchCollider.enabled = false;
+			physicsCollider.enabled = true;
 		}
 
 		if (selectionCircle != null) 

@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
 	private static GameObject[] placedInventory;
 	private static GameObject ball;
 	private static GameObject bin;
+	private static GameObject selectionCircle;
+	
 	private static Vector3 initBallPosition;
 	private static Vector3 initBinPosition;
 	
@@ -39,6 +41,7 @@ public class GameController : MonoBehaviour
 		coins = GameObject.FindGameObjectsWithTag("Coin");
 		ball = GameObject.FindGameObjectWithTag("Ball");
 		bin = GameObject.FindGameObjectWithTag ("Bin");
+		selectionCircle = GameObject.Find("SelectionCircle");
 
 		initBallPosition = ball.transform.position;
 		initBinPosition = bin.transform.position;
@@ -48,6 +51,7 @@ public class GameController : MonoBehaviour
 	public static void runTrial()
 	{
 		ball.rigidbody2D.isKinematic = false;
+		selectionCircle.SetActive(false);
 
 		placedInventory = GameObject.FindGameObjectsWithTag ("PlacedInventory");
 
@@ -60,6 +64,8 @@ public class GameController : MonoBehaviour
 	// Resets the level in terms of ball posistion and  coins
 	public static void resetLevel()
 	{
+		selectionCircle.SetActive(true);
+		
 		ball.transform.position = initBallPosition;
 		ball.transform.rotation = Quaternion.identity;
 		ball.rigidbody2D.angularVelocity = 0;
@@ -83,6 +89,7 @@ public class GameController : MonoBehaviour
 		}
 		
 		tempCoins = 0;
+		FollowBall.resetCamera = true;
 	}
 	
 	// Coins collected during a single run of a level

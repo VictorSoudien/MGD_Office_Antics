@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FollowBall : MonoBehaviour {
-
+public class FollowBall : MonoBehaviour 
+{
 	public GameObject ball;
+	public static bool resetCamera;
 	
 	private Vector3 cameraIntervalPositions;
 	private int counter;
@@ -18,6 +19,10 @@ public class FollowBall : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if (resetCamera == true)
+		{
+			resetPosition();
+		}
 		if (ball != null)
 		{
 			if (ball.renderer.isVisible == false)
@@ -37,7 +42,15 @@ public class FollowBall : MonoBehaviour {
 		 	{
 		 		this.transform.position = cameraIntervalPositions;
 		 	}
-		 	
 		}
+	}
+	
+	// Resets the position of the camera to the initial start position
+	private void resetPosition()
+	{
+		this.transform.position = new Vector3(0,0,-10);
+		cameraIntervalPositions = this.transform.position;
+		counter = 0;
+		resetCamera = false;
 	}
 }

@@ -20,21 +20,12 @@ public class SpringController : MonoBehaviour
 		GameObject collidedObject = collision.gameObject;
 		
 		if (hasBall == false && collidedObject.name.Equals("Ball"))
-		{
-			//collidedObject.transform.position = newPosition;
-			//collidedObject.transform.rotation = Quaternion.identity;
-			//collision.rigidbody.AddForce(this.transform.up * 1000);	
-			
+		{		
 			ball = collidedObject;
 			ball.transform.rotation = Quaternion.identity;
 			hasBall = true;
 		}
 	}
-	
-	/*void OnCollisionExit2D(Collision2D collision)
-	{
-		hasBall = false;
-	}*/
 	
 	// Update is called once per frame
 	void Update () 

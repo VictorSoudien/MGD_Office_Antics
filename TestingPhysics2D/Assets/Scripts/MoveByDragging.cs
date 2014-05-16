@@ -11,6 +11,7 @@ public class MoveByDragging : MonoBehaviour {
 	
 	private BoxCollider2D touchCollider;
 	private Collider2D physicsCollider;
+	private Vector3 target;
 
 	// Use this for initialization
 	void Start () 
@@ -18,6 +19,7 @@ public class MoveByDragging : MonoBehaviour {
 		animator = this.GetComponent<Animator> ();
 		selected = false;
 		isMovable = true;
+		target = Vector3.zero;
 
 		selectionCircle = GameObject.Find ("SelectionCircle");
 		touchCollider = this.GetComponentInChildren<BoxCollider2D>();
@@ -31,9 +33,9 @@ public class MoveByDragging : MonoBehaviour {
 		
 		if (isMovable == true) 
 		{
-			if (Input.GetButton ("Fire1") == true) 
+			if (Input.GetButton ("Fire1") == true)
 			{
-				Vector3 target = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+				target = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 				Vector2 touch2D = new Vector2 (target.x, target.y);
 
 				/*if (selected == false) 
@@ -57,15 +59,25 @@ public class MoveByDragging : MonoBehaviour {
 				}*/
 
 				touchCollider.enabled = true;
-					
-				if ((touchCollider == Physics2D.OverlapPoint (touch2D)) || (physicsCollider == Physics2D.OverlapPoint (touch2D))) 
+				
+				if (!selected && (GameController.ItemSelected == false))
 				{
-					selected = true;
+					if ((touchCollider == Physics2D.OverlapPoint (touch2D)) || (physicsCollider == Physics2D.OverlapPoint (touch2D))) 
+					{
+						selected = true;
+						GameController.ItemSelected = true;
+					}
+					else
+					{
+						selected = false;
+						GameController.ItemSelected = false;
+					}
 				}
-				else
-				{
-					selected = false;
-				}
+			}
+			else
+			{
+				selected = false;
+				GameController.ItemSelected = false;
 			}
 			/*else 
 			{
@@ -85,17 +97,17 @@ public class MoveByDragging : MonoBehaviour {
 			physicsCollider.enabled = true;
 		}
 
-		if (selectionCircle != null) 
+		
+		if (selected == true)
 		{
-			if (selected == true)
+			this.transform.position = new Vector3 (target.x, target.y + 0.5f, 0);
+		
+			if (selectionCircle != null) 
 			{
 				selectionCircle.transform.position = this.transform.position;
 				selectionCircle.renderer.enabled = true;
+				RotateObject.selectedGameObject = this.gameObject;
 			}
-			/*else
-			{
-				selectionCircle.renderer.enabled = false;
-			}*/
 		}
 	}
 }

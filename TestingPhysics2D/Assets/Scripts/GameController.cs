@@ -18,6 +18,15 @@ public class GameController : MonoBehaviour
 	private static AudioSource mainAudioSrc;
 	private static AudioSource coinCollectSrc;
 	private static AudioSource levelCompleteSrc;
+	
+	// Used to track if another inventory item is selected
+	private static bool itemSelected;
+	
+	public static bool ItemSelected
+	{
+		get{return itemSelected;}
+		set{itemSelected = value;}
+	}
 
 	// Use this for initialization
 	void Start () 
@@ -45,6 +54,8 @@ public class GameController : MonoBehaviour
 
 		initBallPosition = ball.transform.position;
 		initBinPosition = bin.transform.position;
+		
+		itemSelected = false;
 	}
 	
 	// Allows gravity to act on the ball

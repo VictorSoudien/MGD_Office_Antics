@@ -1,8 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\FightGame\Assets\Scripts\CharacterController.cs">
     <Files>
       <File FileName="..\..\..\FightGame\Assets\Scripts\CharacterController.cs" Line="45" Column="9" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\FanController.cs">
+    <Files>
+      <File FileName="Assets\FanController.cs" Line="38" Column="43" />
+>>>>>>> 46cbb8f8091563fc0a2f7314454a7c71528b966f
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

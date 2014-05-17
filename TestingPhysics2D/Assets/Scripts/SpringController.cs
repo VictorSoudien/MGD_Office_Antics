@@ -21,6 +21,7 @@ public class SpringController : MonoBehaviour
 		
 		if (hasBall == false && collidedObject.name.Equals("Ball"))
 		{		
+			endPosition = this.transform.position;
 			ball = collidedObject;
 			ball.transform.rotation = Quaternion.identity;
 			hasBall = true;
@@ -38,7 +39,7 @@ public class SpringController : MonoBehaviour
 			
 			if (ball.transform.position == this.transform.position)
 			{
-				endPosition	= this.transform.position + (this.transform.up * 1.1f);
+				endPosition	= this.transform.position + (this.transform.up * 1.5f);
 			}
 			else if (ball.transform.position == endPosition)
 			{

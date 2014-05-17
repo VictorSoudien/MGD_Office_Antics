@@ -2,10 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\RotateObject.cs">
     <Files>
-      <File FileName="Assets\Scripts\SpringController.cs" Line="50" Column="5" />
-      <File FileName="Assets\Scripts\GameController.cs" Line="15" Column="9" />
-      <File FileName="Assets\RotateObject.cs" Line="32" Column="36" />
-      <File FileName="Assets\Scripts\MoveByDragging.cs" Line="109" Column="54" />
+      <File FileName="Assets\RotateObject.cs" Line="91" Column="7" />
+      <File FileName="Assets\Scripts\MoveByDragging.cs" Line="108" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

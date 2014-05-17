@@ -1,11 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\RotateObject.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\FightGame\Assets\Scripts\CharacterController.cs">
     <Files>
-      <File FileName="Assets\Scripts\SpringController.cs" Line="50" Column="5" />
-      <File FileName="Assets\Scripts\GameController.cs" Line="15" Column="9" />
-      <File FileName="Assets\RotateObject.cs" Line="32" Column="36" />
-      <File FileName="Assets\Scripts\MoveByDragging.cs" Line="109" Column="54" />
+      <File FileName="..\..\..\FightGame\Assets\Scripts\CharacterController.cs" Line="45" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

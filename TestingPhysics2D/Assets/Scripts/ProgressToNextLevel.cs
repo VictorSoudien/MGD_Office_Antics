@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ProgressToNextLevel : MonoBehaviour {
@@ -18,8 +18,9 @@ public class ProgressToNextLevel : MonoBehaviour {
 		{
 			if (collider.gameObject.name.Equals("Ball"))
 			{
-				GameController.addCoinsToTotal();			
-				Application.LoadLevel(indexOfNextScene);
+				GameController.addCoinsToTotal();
+				GameController.levelComplete(indexOfNextScene);
+				//Application.LoadLevel(indexOfNextScene);
 			}
 		}
 	}

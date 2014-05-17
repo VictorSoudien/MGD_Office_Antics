@@ -41,7 +41,7 @@ public class GameController : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-				
+
 	}
 	
 	// Used instead of start so that the values are updated for each level
@@ -56,6 +56,13 @@ public class GameController : MonoBehaviour
 		initBinPosition = bin.transform.position;
 		
 		itemSelected = false;
+
+		//Destroys game objects from previous level no longer in use
+		GameObject[] toBeDestroyed = GameObject.FindGameObjectsWithTag ("Destroy");
+		foreach (GameObject gameObj in toBeDestroyed) 
+		{
+			Destroy (gameObj);
+		}
 	}
 	
 	// Allows gravity to act on the ball
@@ -101,6 +108,15 @@ public class GameController : MonoBehaviour
 		
 		tempCoins = 0;
 		FollowBall.resetCamera = true;
+	}
+
+	// Perform anctions that need to occur on level complete
+	public static void levelComplete(int indexOfNextLevel)
+	{
+		// Display end of level screen
+
+		Application.LoadLevel (indexOfNextLevel);
+		ball.tag = "Destroy";
 	}
 	
 	// Coins collected during a single run of a level

@@ -26,6 +26,7 @@ public class RotateObject : MonoBehaviour
 			if (this.collider2D == Physics2D.OverlapPoint(touch2D) || (touched == true))
 			{
 				touched = true;
+				GameController.ItemSelected = true;
 				float deltaX = touch2D.x - previousTouch.x;
 				float deltaY = touch2D.y - previousTouch.y;
 
@@ -104,6 +105,7 @@ public class RotateObject : MonoBehaviour
 		else
 		{
 			touched = false;
+			GameController.ItemSelected = false;
 		}
 	}
 	

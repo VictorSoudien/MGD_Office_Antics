@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SpringController : MonoBehaviour 
 {
-	private bool hasBall;
+	private static bool hasBall;
 	private GameObject ball;
 	private Vector3 endPosition;
 	private float ballMoveSpeed;
@@ -46,9 +46,21 @@ public class SpringController : MonoBehaviour
 				hasBall = false;
 				ball.rigidbody2D.isKinematic = false;
 				ball.rigidbody2D.AddForce(this.transform.up * 1300);
+				GameController.playSpringSound();
 				ballMoveSpeed = 0;
 				endPosition = this.transform.position;
 			}
 		}
+		else
+		{
+			endPosition = this.transform.position;
+			ballMoveSpeed = 0;
+		}
+	}
+	
+	// Releases control of the ball
+	public static void releaseControlOfBall()
+	{
+		hasBall = false;
 	}
 }

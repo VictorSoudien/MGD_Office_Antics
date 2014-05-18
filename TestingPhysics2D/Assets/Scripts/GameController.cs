@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
 	
 	private static AudioSource mainAudioSrc;
 	private static AudioSource coinCollectSrc;
+	private static AudioSource springBounceSrc;
 	private static AudioSource levelCompleteSrc;
 	
 	// Used to track if another inventory item is selected
@@ -33,6 +34,7 @@ public class GameController : MonoBehaviour
 	{		
 		mainAudioSrc = audio;
 		coinCollectSrc = GameObject.Find("CoinCollectSound").audio;
+		springBounceSrc = GameObject.Find("SpringSound").audio;
 		levelCompleteSrc = GameObject.Find("LevelCompleteSound").audio;
 		
 		DontDestroyOnLoad(this);
@@ -55,6 +57,7 @@ public class GameController : MonoBehaviour
 		initBallPosition = ball.transform.position;
 		initBinPosition = bin.transform.position;
 		
+		bin.rigidbody2D.isKinematic = true;
 		itemSelected = false;
 
 		//Destroys game objects from previous level no longer in use
@@ -68,6 +71,7 @@ public class GameController : MonoBehaviour
 	// Allows gravity to act on the ball
 	public static void runTrial()
 	{
+		bin.rigidbody2D.isKinematic = false;
 		ball.rigidbody2D.isKinematic = false;
 		selectionCircle.SetActive(false);
 
@@ -82,6 +86,8 @@ public class GameController : MonoBehaviour
 	// Resets the level in terms of ball posistion and  coins
 	public static void resetLevel()
 	{
+		SpringController.releaseControlOfBall();
+		bin.rigidbody2D.isKinematic = true;
 		selectionCircle.SetActive(true);
 		
 		ball.transform.position = initBallPosition;
@@ -117,6 +123,12 @@ public class GameController : MonoBehaviour
 
 		Application.LoadLevel (indexOfNextLevel);
 		ball.tag = "Destroy";
+	}
+	
+	// Play a sound when the ball is shot off a spring
+	public static void playSpringSound()
+	{
+		springBounceSrc.Play();
 	}
 	
 	// Coins collected during a single run of a level

@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 
 public class FanController : MonoBehaviour {
 
-	public Vector2 windStrength;
+	public float windStrength;
 
 	private List<Collider2D> objectsInZone;
 
@@ -35,7 +35,7 @@ public class FanController : MonoBehaviour {
 	{
 		foreach (Collider2D coll in objectsInZone)
 		{
-			coll.rigidbody2D.AddForce(windStrength);
+			coll.rigidbody2D.AddForce(this.transform.up * windStrength);
 		}
 	}
 }

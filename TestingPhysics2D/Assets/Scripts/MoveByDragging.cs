@@ -20,10 +20,20 @@ public class MoveByDragging : MonoBehaviour {
 		selected = false;
 		isMovable = true;
 		target = Vector3.zero;
-
+		
 		selectionCircle = GameObject.Find ("SelectionCircle");
-		touchCollider = this.GetComponentInChildren<BoxCollider2D>();
-		physicsCollider = this.GetComponentInChildren<Collider2D>();
+		
+		// Due to the wind zone, fans need to be handled differently
+		if (!this.name.Equals("Fan"))
+		{
+			touchCollider = this.GetComponentInChildren<BoxCollider2D>();
+			physicsCollider = this.GetComponentInChildren<Collider2D>();
+		}
+		else
+		{
+			touchCollider = this.GetComponent<BoxCollider2D>();
+			physicsCollider = touchCollider;//this.GetComponentInChildren<CircleCollider2D>();	
+		}
 	}
 
 	// Update is called once per frame
@@ -37,26 +47,6 @@ public class MoveByDragging : MonoBehaviour {
 			{
 				target = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 				Vector2 touch2D = new Vector2 (target.x, target.y);
-
-				/*if (selected == false) 
-				{
-					if (this.collider2D == Physics2D.OverlapPoint (touch2D)) 
-					{
-						animator.SetBool ("Touched", true);
-						selected = true;
-						this.transform.position = new Vector3 (target.x, target.y + 0.5f, 0);
-					}
-				} 
-				else 
-				{
-					this.transform.position = new Vector3 (target.x, target.y + 0.5f, 0);
-
-					// Draw the selection circle for the item
-					if (selectionCircle != null)
-					{
-						selectionCircle.renderer.enabled = true;
-					}
-				}*/
 
 				touchCollider.enabled = true;
 				
@@ -79,17 +69,6 @@ public class MoveByDragging : MonoBehaviour {
 				selected = false;
 				GameController.ItemSelected = false;
 			}
-			/*else 
-			{
-				selected = false;
-				animator.SetBool ("Touched", false);
-
-				// Draw the selection circle for the item
-				if (selectionCircle != null)
-				{
-					selectionCircle.renderer.enabled = false;
-				}
-			}*/
 		}
 		else
 		{

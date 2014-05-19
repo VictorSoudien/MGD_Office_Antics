@@ -37,5 +37,7 @@ public class FanController : MonoBehaviour {
 		{
 			coll.rigidbody2D.AddForce(this.transform.up * windStrength);
 		}
+
+		GameController.playFanSound ();
 	}
 }

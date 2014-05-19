@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\FanController.cs" />
+     <Compile Include="Assets\NextButtonController.cs" />
      <Compile Include="Assets\RotateObject.cs" />
      <Compile Include="Assets\Scripts\CollisionWithBall.cs" />
      <Compile Include="Assets\Scripts\FollowBall.cs" />

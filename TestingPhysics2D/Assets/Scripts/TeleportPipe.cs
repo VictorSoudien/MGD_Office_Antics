@@ -22,6 +22,7 @@ public class TeleportPipe : MonoBehaviour {
 			{
 				collision.transform.position = linkedPipe.transform.position;
 				collision.rigidbody.AddForce(linkedPipe.transform.up * exitVelocity);
+				GameController.playPipeWoosh();
 			}
 		}
 	}

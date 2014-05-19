@@ -11,6 +11,9 @@ public class GameController : MonoBehaviour
 	private static GameObject ball;
 	private static GameObject bin;
 	private static GameObject selectionCircle;
+
+	private static GameObject winScreen;
+	private static GameObject nextButton;
 	
 	private static Vector3 initBallPosition;
 	private static Vector3 initBinPosition;
@@ -18,7 +21,11 @@ public class GameController : MonoBehaviour
 	private static AudioSource mainAudioSrc;
 	private static AudioSource coinCollectSrc;
 	private static AudioSource springBounceSrc;
+	private static AudioSource fanSrc;
+	private static AudioSource pipeWooshSrc;
 	private static AudioSource levelCompleteSrc;
+
+	private static int indexOfNextLevel;
 	
 	// Used to track if another inventory item is selected
 	private static bool itemSelected;
@@ -35,7 +42,13 @@ public class GameController : MonoBehaviour
 		mainAudioSrc = audio;
 		coinCollectSrc = GameObject.Find("CoinCollectSound").audio;
 		springBounceSrc = GameObject.Find("SpringSound").audio;
+		fanSrc = GameObject.Find ("FanSound").audio;
+		pipeWooshSrc = GameObject.Find ("PipeWooshSound").audio;
 		levelCompleteSrc = GameObject.Find("LevelCompleteSound").audio;
+
+		winScreen = GameObject.Find ("WinScreen");
+		nextButton = GameObject.Find ("NextButton");
+		indexOfNextLevel = 0;
 		
 		DontDestroyOnLoad(this);
 	}
@@ -117,18 +130,32 @@ public class GameController : MonoBehaviour
 	}
 
 	// Perform anctions that need to occur on level complete
-	public static void levelComplete(int indexOfNextLevel)
+	public static void levelComplete()
 	{
-		// Display end of level screen
-
 		Application.LoadLevel (indexOfNextLevel);
 		ball.tag = "Destroy";
+
+		winScreen.renderer.enabled = false;
+		nextButton.renderer.enabled = false;
+		nextButton.collider2D.enabled = false;
 	}
 	
 	// Play a sound when the ball is shot off a spring
 	public static void playSpringSound()
 	{
 		springBounceSrc.Play();
+	}
+
+	// Play a sound when the ball passes in front of a sprite
+	public static void playFanSound()
+	{
+		fanSrc.Play ();
+	}
+
+	// Play a sound when the ball enters a pipe
+	public static void playPipeWoosh()
+	{
+		pipeWooshSrc.Play ();
 	}
 	
 	// Coins collected during a single run of a level
@@ -139,11 +166,21 @@ public class GameController : MonoBehaviour
 	}
 	
 	// Once the ball reached the bucket the temp coins are added to the total coin count
-	public static void addCoinsToTotal()
+	public static void addCoinsToTotal(int nextLevel)
 	{
 		totalCoins += tempCoins;
 		tempCoins = 0;
-		
+
+		indexOfNextLevel = nextLevel;
+		displayWinScreen ();
+	}
+
+	// Display the win screen
+	public static void displayWinScreen()
+	{
 		levelCompleteSrc.Play();
+		winScreen.renderer.enabled = true;
+		nextButton.renderer.enabled = true;
+		nextButton.collider2D.enabled = true;
 	}
 }

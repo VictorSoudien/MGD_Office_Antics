@@ -50,9 +50,11 @@
      <Compile Include="Assets\NextButtonController.cs" />
      <Compile Include="Assets\RotateObject.cs" />
      <Compile Include="Assets\Scripts\CollisionWithBall.cs" />
+     <Compile Include="Assets\Scripts\CreateInventoryItem.cs" />
      <Compile Include="Assets\Scripts\FollowBall.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\MoveByDragging.cs" />
+     <Compile Include="Assets\Scripts\MyComponent.cs" />
      <Compile Include="Assets\Scripts\PlayButtonScript.cs" />
      <Compile Include="Assets\Scripts\ProgressToNextLevel.cs" />
      <Compile Include="Assets\Scripts\SpringController.cs" />

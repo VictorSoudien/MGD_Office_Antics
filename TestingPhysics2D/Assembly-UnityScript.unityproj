@@ -46,11 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\TouchScript\Examples\General\Tap\Scripts\TapJS_Breaker.js" />
-     <Compile Include="Assets\TouchScript\Examples\General\Tap\Scripts\TapJS_Spawner.js" />
- <Reference Include="TouchScript">
- <HintPath>Assets\TouchScript\Plugins\TouchScript.dll</HintPath>
- </Reference>
+     <Compile Include="Assets\CreateInventoryItem.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -36,8 +36,7 @@ public class FanController : MonoBehaviour {
 		foreach (Collider2D coll in objectsInZone)
 		{
 			coll.rigidbody2D.AddForce(this.transform.up * windStrength);
+			//GameController.playFanSound ();
 		}
-
-		GameController.playFanSound ();
 	}
 }

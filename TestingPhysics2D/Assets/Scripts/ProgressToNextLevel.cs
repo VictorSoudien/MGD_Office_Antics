@@ -5,10 +5,13 @@ public class ProgressToNextLevel : MonoBehaviour {
 
 	public int indexOfNextScene = -1;
 
+	private int callValue; // Ensures that coins are only added once
+
 	// Use this for initialization
 	void Start () 
 	{
 		GameController.initForLevel();
+		callValue = 0;
 	}
 	
 	// Detects a collision with another object
@@ -18,8 +21,8 @@ public class ProgressToNextLevel : MonoBehaviour {
 		{
 			if (collider.gameObject.name.Equals("Ball"))
 			{
-				GameController.addCoinsToTotal(indexOfNextScene);
-				//GameController.levelComplete(indexOfNextScene);
+				GameController.addCoinsToTotal(indexOfNextScene, callValue);
+				callValue++;
 			}
 		}
 	}

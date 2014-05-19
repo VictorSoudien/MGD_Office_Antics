@@ -32,7 +32,7 @@ public class MoveByDragging : MonoBehaviour {
 		else
 		{
 			touchCollider = this.GetComponent<BoxCollider2D>();
-			physicsCollider = touchCollider;//this.GetComponentInChildren<CircleCollider2D>();	
+			physicsCollider = touchCollider;	
 		}
 	}
 

@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
 	private static AudioSource springBounceSrc;
 	private static AudioSource fanSrc;
 	private static AudioSource pipeWooshSrc;
+	private static AudioSource eraserBounceSrc;
 	private static AudioSource levelCompleteSrc;
 
 	private static int indexOfNextLevel;
@@ -44,6 +45,7 @@ public class GameController : MonoBehaviour
 		springBounceSrc = GameObject.Find("SpringSound").audio;
 		fanSrc = GameObject.Find ("FanSound").audio;
 		pipeWooshSrc = GameObject.Find ("PipeWooshSound").audio;
+		eraserBounceSrc = GameObject.Find ("EraserBounceSound").audio;
 		levelCompleteSrc = GameObject.Find("LevelCompleteSound").audio;
 
 		winScreen = GameObject.Find ("WinScreen");
@@ -157,6 +159,12 @@ public class GameController : MonoBehaviour
 	{
 		pipeWooshSrc.Play ();
 	}
+
+	// Play a sound when the ball bounces off an eraser
+	public static void playEraserBounce()
+	{
+		eraserBounceSrc.Play ();
+	}
 	
 	// Coins collected during a single run of a level
 	public static void addTempCoin()
@@ -166,19 +174,23 @@ public class GameController : MonoBehaviour
 	}
 	
 	// Once the ball reached the bucket the temp coins are added to the total coin count
-	public static void addCoinsToTotal(int nextLevel)
+	public static void addCoinsToTotal(int nextLevel, int call)
 	{
 		totalCoins += tempCoins;
 		tempCoins = 0;
 
 		indexOfNextLevel = nextLevel;
 		displayWinScreen ();
+
+		if (call == 0) 
+		{
+			levelCompleteSrc.Play ();
+		}
 	}
 
 	// Display the win screen
 	public static void displayWinScreen()
 	{
-		levelCompleteSrc.Play();
 		winScreen.renderer.enabled = true;
 		nextButton.renderer.enabled = true;
 		nextButton.collider2D.enabled = true;

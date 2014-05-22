@@ -11,7 +11,9 @@ public class CollisionWithBall : MonoBehaviour {
 	void Start () 
 	{
 		ballCollider = GameObject.FindGameObjectWithTag("Ball").collider2D;
-		sparkleObject.SetActive (false);
+		if (sparkleObject != null) {
+			sparkleObject.SetActive (false);
+		}
 	}
 	
 	// Checks if the ball has collided with it

@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class GameController : MonoBehaviour 
 {
+	private GameController gc;
 	private static int tempCoins;
 	private static int totalCoins; // All coins collected thus far in the game
 
@@ -40,7 +44,7 @@ public class GameController : MonoBehaviour
 
 	// Use this for initialization
 	void Start () 
-	{		
+	{			
 		mainAudioSrc = audio;
 		coinCollectSrc = GameObject.Find("CoinCollectSound").audio;
 		springBounceSrc = GameObject.Find("SpringSound").audio;
@@ -54,6 +58,7 @@ public class GameController : MonoBehaviour
 		nextButton = GameObject.Find ("NextButton");
 		indexOfNextLevel = 0;
 		
+		//loadData();
 		DontDestroyOnLoad(this);
 	}
 	
@@ -62,6 +67,30 @@ public class GameController : MonoBehaviour
 	{
 
 	}
+	
+	// Will save the game when the user closes the it
+	/*void OnApplicationPause()
+	{
+		BinaryFormatter binForm = new BinaryFormatter();
+		FileStream file = File.Open(Application.persistentDataPath + "/gameSave.dat", FileMode.OpenOrCreate);
+		GameData saveData =  new GameData();
+		saveData.currentLevelIndex = 3;
+		
+		binForm.Serialize(file, saveData);
+		file.Close();
+	}*/
+	
+	/*public void loadData()
+	{
+		if (File.Exists(Application.persistentDataPath + "/gameSave.dat"))
+		{
+			BinaryFormatter binForm = new BinaryFormatter();
+			FileStream file = File.Open(Application.persistentDataPath + "/gameSave.dat", FileMode.Open);
+			GameData loadedData = (GameData) binForm.Deserialize(file);
+			file.Close();
+			Application.LoadLevel(loadedData.currentLevelIndex);
+		}
+	}*/
 	
 	// Used instead of start so that the values are updated for each level
 	public static void initForLevel()
@@ -203,4 +232,10 @@ public class GameController : MonoBehaviour
 		nextButton.renderer.enabled = true;
 		nextButton.collider2D.enabled = true;
 	}
+}
+
+[Serializable]
+class GameData
+{
+	public int currentLevelIndex;
 }

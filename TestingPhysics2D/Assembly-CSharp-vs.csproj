@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\MyComponent.cs" />
      <Compile Include="Assets\Scripts\PlayButtonScript.cs" />
      <Compile Include="Assets\Scripts\ProgressToNextLevel.cs" />
+     <Compile Include="Assets\Scripts\SparkleScript.cs" />
      <Compile Include="Assets\Scripts\SpringController.cs" />
      <Compile Include="Assets\Scripts\TeleportPipe.cs" />
   </ItemGroup>

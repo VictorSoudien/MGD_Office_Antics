@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
 	private static AudioSource fanSrc;
 	private static AudioSource pipeWooshSrc;
 	private static AudioSource eraserBounceSrc;
+	private static AudioSource freezeSrc;
 	private static AudioSource levelCompleteSrc;
 
 	private static int indexOfNextLevel;
@@ -46,6 +47,7 @@ public class GameController : MonoBehaviour
 		fanSrc = GameObject.Find ("FanSound").audio;
 		pipeWooshSrc = GameObject.Find ("PipeWooshSound").audio;
 		eraserBounceSrc = GameObject.Find ("EraserBounceSound").audio;
+		freezeSrc = GameObject.Find ("FreezingSound").audio;
 		levelCompleteSrc = GameObject.Find("LevelCompleteSound").audio;
 
 		winScreen = GameObject.Find ("WinScreen");
@@ -164,6 +166,12 @@ public class GameController : MonoBehaviour
 	public static void playEraserBounce()
 	{
 		eraserBounceSrc.Play ();
+	}
+	
+	// Play the freeze sound when the ball enters a frost pipe
+	public static void playFreeze()
+	{
+		freezeSrc.Play();
 	}
 	
 	// Coins collected during a single run of a level

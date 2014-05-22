@@ -46,15 +46,16 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FanController.cs" />
      <Compile Include="Assets\NextButtonController.cs" />
-     <Compile Include="Assets\RotateObject.cs" />
      <Compile Include="Assets\Scripts\CollisionWithBall.cs" />
+     <Compile Include="Assets\Scripts\FanController.cs" />
      <Compile Include="Assets\Scripts\FollowBall.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\IncineratorController.cs" />
      <Compile Include="Assets\Scripts\MoveByDragging.cs" />
      <Compile Include="Assets\Scripts\PlayButtonScript.cs" />
      <Compile Include="Assets\Scripts\ProgressToNextLevel.cs" />
+     <Compile Include="Assets\Scripts\RotateObject.cs" />
      <Compile Include="Assets\Scripts\SpringController.cs" />
      <Compile Include="Assets\Scripts\TeleportPipe.cs" />
   </ItemGroup>

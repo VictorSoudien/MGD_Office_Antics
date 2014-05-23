@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{FE8576C0-C73A-6160-5A42-E69ABD8072C8}") = "TestingPhysics2D", "Assembly-CSharp.csproj", "{62A4326B-A789-12DE-6A7A-4BC71F17C05C}"
 EndProject
+Project("{FE8576C0-C73A-6160-5A42-E69ABD8072C8}") = "TestingPhysics2D", "Assembly-UnityScript-firstpass.unityproj", "{D8F5EDCC-1F08-C64D-C235-DD9994E9204D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{62A4326B-A789-12DE-6A7A-4BC71F17C05C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62A4326B-A789-12DE-6A7A-4BC71F17C05C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62A4326B-A789-12DE-6A7A-4BC71F17C05C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8F5EDCC-1F08-C64D-C235-DD9994E9204D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8F5EDCC-1F08-C64D-C235-DD9994E9204D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8F5EDCC-1F08-C64D-C235-DD9994E9204D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8F5EDCC-1F08-C64D-C235-DD9994E9204D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																												GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																GlobalSection(MonoDevelopProperties) = preSolution
 																																																				GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0

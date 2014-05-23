@@ -6,9 +6,11 @@ using System.Collections.ObjectModel;
 public class TeleportPipe : MonoBehaviour {
 
 	public GameObject linkedPipe;
+	public GameObject incineratorFlame;
 	public float exitVelocity;
 	public List<GameObject> alternatePipes;
 	public float changeTimer;
+	public PhysicsMaterial2D iceMaterial;
 	
 	public enum Type {NORMAL, FROST, TIMED, INCINERATOR};
 	public Type pipeType;
@@ -19,9 +21,15 @@ public class TeleportPipe : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () 
-	{
+	{	
 		currentLinkedPipe = 0;
 		spriteRenderer = this.GetComponent<SpriteRenderer>();
+		
+		if (pipeType == Type.INCINERATOR)
+		{
+			incineratorFlame = GameObject.Find("IncineratorFlame");
+			incineratorFlame.SetActive(false);
+		}
 	}
 	
 	void OnCollisionEnter2D(Collision2D collision)
@@ -35,12 +43,13 @@ public class TeleportPipe : MonoBehaviour {
 			{
 				if (pipeType == Type.NORMAL)
 				{
+					GameController.playPipeEnter();
 					collision.transform.position = linkedPipe.transform.position;
 					collision.rigidbody.AddForce(linkedPipe.transform.up * exitVelocity);
-					GameController.playPipeWoosh();
 				}
 				else if (pipeType == Type.FROST)
 				{
+					collision.collider.collider2D.sharedMaterial = iceMaterial;
 					collision.transform.position = linkedPipe.transform.position;
 					collision.rigidbody.gravityScale = 2;
 					collision.rigidbody.fixedAngle = true;
@@ -51,10 +60,16 @@ public class TeleportPipe : MonoBehaviour {
 					//int pipeIndex = Mathf.Abs(currentLinkedPipe - 1) % alternatePipes.Count;
 					collision.transform.position = alternatePipes[currentLinkedPipe].transform.position;
 				}
-				else if (pipeType == Type.INCINERATOR)
-				{
-					// Destroy the ball here
-				}
+			}
+			if (pipeType == Type.INCINERATOR)
+			{
+				// Destroy the ball here
+				GameController.playExplosion();
+				GameObject explo = (GameObject) (Instantiate(incineratorFlame, incineratorFlame.transform.position, incineratorFlame.transform.rotation));
+				explo.SetActive(true);
+				
+				// Display level end screen here
+				//Application.LoadLevel(Application.loadedLevel);
 			}
 		}
 	}

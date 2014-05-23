@@ -26,9 +26,10 @@ public class GameController : MonoBehaviour
 	private static AudioSource coinCollectSrc;
 	private static AudioSource springBounceSrc;
 	private static AudioSource fanSrc;
-	private static AudioSource pipeWooshSrc;
+	private static AudioSource pipeEnterSrc;
 	private static AudioSource eraserBounceSrc;
 	private static AudioSource freezeSrc;
+	private static AudioSource incineratorSrc;
 	private static AudioSource levelCompleteSrc;
 
 	private static int indexOfNextLevel;
@@ -45,18 +46,21 @@ public class GameController : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{			
-		mainAudioSrc = audio;
+		mainAudioSrc = GameObject.Find("backgroundSound").audio;
 		coinCollectSrc = GameObject.Find("CoinCollectSound").audio;
 		springBounceSrc = GameObject.Find("SpringSound").audio;
 		fanSrc = GameObject.Find ("FanSound").audio;
-		pipeWooshSrc = GameObject.Find ("PipeWooshSound").audio;
+		pipeEnterSrc = GameObject.Find ("PipeEnterSound").audio;
 		eraserBounceSrc = GameObject.Find ("EraserBounceSound").audio;
 		freezeSrc = GameObject.Find ("FreezingSound").audio;
+		incineratorSrc = GameObject.Find ("IncineratorSound").audio;
 		levelCompleteSrc = GameObject.Find("LevelCompleteSound").audio;
 
 		winScreen = GameObject.Find ("WinScreen");
 		nextButton = GameObject.Find ("NextButton");
 		indexOfNextLevel = 0;
+		
+		mainAudioSrc.Play ();
 		
 		//loadData();
 		DontDestroyOnLoad(this);
@@ -95,6 +99,9 @@ public class GameController : MonoBehaviour
 	// Used instead of start so that the values are updated for each level
 	public static void initForLevel()
 	{	
+		Debug.Log(Application.loadedLevel);
+		mainAudioSrc.Stop();
+		
 		coins = GameObject.FindGameObjectsWithTag("Coin");
 		ball = GameObject.FindGameObjectWithTag("Ball");
 		bin = GameObject.FindGameObjectWithTag ("Bin");
@@ -141,6 +148,8 @@ public class GameController : MonoBehaviour
 		ball.rigidbody2D.angularVelocity = 0;
 		ball.rigidbody2D.velocity = Vector2.zero;
 		ball.rigidbody2D.isKinematic = true;
+		ball.rigidbody2D.gravityScale = 1;
+		ball.collider2D.sharedMaterial = null;
 
 		bin.transform.position = initBinPosition;
 		bin.transform.rotation = Quaternion.identity;
@@ -184,11 +193,11 @@ public class GameController : MonoBehaviour
 	{
 		fanSrc.Play ();
 	}
-
+	
 	// Play a sound when the ball enters a pipe
-	public static void playPipeWoosh()
+	public static void playPipeEnter()
 	{
-		pipeWooshSrc.Play ();
+		pipeEnterSrc.Play ();
 	}
 
 	// Play a sound when the ball bounces off an eraser
@@ -201,6 +210,12 @@ public class GameController : MonoBehaviour
 	public static void playFreeze()
 	{
 		freezeSrc.Play();
+	}
+	
+	// Play explosion when the ball enters the incinerator
+	public static void playExplosion()
+	{
+		incineratorSrc.Play();
 	}
 	
 	// Coins collected during a single run of a level

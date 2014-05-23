@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\GameStartController.cs" />
+     <Compile Include="Assets\LevelLoadController.cs" />
      <Compile Include="Assets\NextButtonController.cs" />
      <Compile Include="Assets\Scripts\CollisionWithBall.cs" />
      <Compile Include="Assets\Scripts\FanController.cs" />
@@ -57,6 +59,10 @@
      <Compile Include="Assets\Scripts\RotateObject.cs" />
      <Compile Include="Assets\Scripts\SpringController.cs" />
      <Compile Include="Assets\Scripts\TeleportPipe.cs" />
+     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1604,9 +1604,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linkedPipe: {fileID: 659094088}
+  incineratorFlame: {fileID: 0}
   exitVelocity: 0
   alternatePipes: []
   changeTimer: 0
+  iceMaterial: {fileID: 0}
   pipeType: 0
 --- !u!60 &1884988246
 PolygonCollider2D:
@@ -1838,7 +1840,7 @@ GameObject:
   - 114: {fileID: 2046783704}
   m_Layer: 0
   m_Name: eraser
-  m_TagString: Untagged
+  m_TagString: PlacedInventory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

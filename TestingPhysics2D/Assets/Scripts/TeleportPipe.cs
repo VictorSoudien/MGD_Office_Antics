@@ -10,7 +10,7 @@ public class TeleportPipe : MonoBehaviour {
 	public List<GameObject> alternatePipes;
 	public float changeTimer;
 	
-	public enum Type {NORMAL, FROST, TIMED};
+	public enum Type {NORMAL, FROST, TIMED, INCINERATOR};
 	public Type pipeType;
 	
 	private float elapsedTime;
@@ -50,6 +50,10 @@ public class TeleportPipe : MonoBehaviour {
 				{
 					//int pipeIndex = Mathf.Abs(currentLinkedPipe - 1) % alternatePipes.Count;
 					collision.transform.position = alternatePipes[currentLinkedPipe].transform.position;
+				}
+				else if (pipeType == Type.INCINERATOR)
+				{
+					// Destroy the ball here
 				}
 			}
 		}

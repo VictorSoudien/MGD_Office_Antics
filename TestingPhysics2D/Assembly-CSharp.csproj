@@ -51,7 +51,6 @@
      <Compile Include="Assets\Scripts\FanController.cs" />
      <Compile Include="Assets\Scripts\FollowBall.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
-     <Compile Include="Assets\Scripts\IncineratorController.cs" />
      <Compile Include="Assets\Scripts\MoveByDragging.cs" />
      <Compile Include="Assets\Scripts\PlayButtonScript.cs" />
      <Compile Include="Assets\Scripts\ProgressToNextLevel.cs" />

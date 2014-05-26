@@ -1203,7 +1203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85318e082acaed042be402bb0552f4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indexOfNextScene: 1
+  indexOfNextScene: 3
 --- !u!60 &1124666032
 PolygonCollider2D:
   m_ObjectHideFlags: 0

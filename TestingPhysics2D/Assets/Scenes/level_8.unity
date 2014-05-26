@@ -816,9 +816,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linkedPipe: {fileID: 1801193293}
+  incineratorFlame: {fileID: 0}
   exitVelocity: 0
   alternatePipes: []
   changeTimer: 0
+  iceMaterial: {fileID: 0}
   pipeType: 0
 --- !u!60 &780650916
 PolygonCollider2D:
@@ -1145,9 +1147,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linkedPipe: {fileID: 604725830}
+  incineratorFlame: {fileID: 0}
   exitVelocity: 0
   alternatePipes: []
   changeTimer: 0
+  iceMaterial: {fileID: 0}
   pipeType: 0
 --- !u!212 &975520188
 SpriteRenderer:
@@ -1289,9 +1293,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linkedPipe: {fileID: 2063993181}
+  incineratorFlame: {fileID: 0}
   exitVelocity: 0
   alternatePipes: []
   changeTimer: 0
+  iceMaterial: {fileID: 0}
   pipeType: 0
 --- !u!50 &1241481648
 Rigidbody2D:
@@ -1635,7 +1641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85318e082acaed042be402bb0552f4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indexOfNextScene: 8
+  indexOfNextScene: 10
 --- !u!60 &1501302235
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -1295,9 +1295,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linkedPipe: {fileID: 373319160}
+  incineratorFlame: {fileID: 0}
   exitVelocity: 1000
   alternatePipes: []
   changeTimer: 0
+  iceMaterial: {fileID: 0}
   pipeType: 0
 --- !u!60 &1080260922
 PolygonCollider2D:
@@ -2020,7 +2022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85318e082acaed042be402bb0552f4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indexOfNextScene: 4
+  indexOfNextScene: 6
 --- !u!60 &1553547971
 PolygonCollider2D:
   m_ObjectHideFlags: 0

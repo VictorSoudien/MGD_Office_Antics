@@ -1,15 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GameStartController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\LevelLoadController.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameController.cs" Line="63" Column="24" />
-      <File FileName="Assets\GameStartController.cs" Line="22" Column="56" />
-      <File FileName="Assets\Scripts\PlayButtonScript.cs" Line="27" Column="5" />
-      <File FileName="Assets\Scripts\GameController.cs" Line="257" Column="1" />
-      <File FileName="Assets\Scripts\TeleportPipe.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MoveByDragging.cs" Line="48" Column="67" />
-      <File FileName="Assets\Scripts\RotateObject.cs" Line="105" Column="7" />
-      <File FileName="Assets\LevelLoadController.cs" Line="40" Column="33" />
+      <File FileName="Assets\LevelLoadController.cs" Line="60" Column="45" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

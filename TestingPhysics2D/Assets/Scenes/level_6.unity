@@ -951,6 +951,7 @@ MonoBehaviour:
   exitVelocity: 1000
   alternatePipes: []
   changeTimer: 0
+  iceMaterial: {fileID: 0}
   pipeType: 0
 --- !u!1 &1045715416
 GameObject:
@@ -1253,7 +1254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85318e082acaed042be402bb0552f4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indexOfNextScene: 6
+  indexOfNextScene: 8
 --- !u!1 &1516377447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,6 +1770,7 @@ MonoBehaviour:
   exitVelocity: 1000
   alternatePipes: []
   changeTimer: 0
+  iceMaterial: {fileID: 0}
   pipeType: 0
 --- !u!50 &1547427218
 Rigidbody2D:

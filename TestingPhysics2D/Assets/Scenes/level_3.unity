@@ -105,9 +105,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linkedPipe: {fileID: 875796161}
+  incineratorFlame: {fileID: 0}
   exitVelocity: 0
   alternatePipes: []
   changeTimer: 0
+  iceMaterial: {fileID: 0}
   pipeType: 0
 --- !u!60 &40606597
 PolygonCollider2D:
@@ -713,7 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85318e082acaed042be402bb0552f4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indexOfNextScene: 3
+  indexOfNextScene: 5
 --- !u!60 &777231449
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1208,9 +1210,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linkedPipe: {fileID: 1009256062}
+  incineratorFlame: {fileID: 0}
   exitVelocity: 0
   alternatePipes: []
   changeTimer: 0
+  iceMaterial: {fileID: 0}
   pipeType: 0
 --- !u!50 &1413647463
 Rigidbody2D:

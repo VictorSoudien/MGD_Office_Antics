@@ -87,7 +87,7 @@ GameObject:
   - 61: {fileID: 11431781}
   - 50: {fileID: 11431780}
   m_Layer: 0
-  m_Name: InventoryItem
+  m_Name: InventoryItem_Eraser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -984,7 +984,7 @@ GameObject:
   - 61: {fileID: 534182595}
   - 50: {fileID: 534182596}
   m_Layer: 0
-  m_Name: InventoryItem
+  m_Name: InventoryItem_Pencil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2430,7 +2430,7 @@ GameObject:
   - 61: {fileID: 1406743151}
   - 50: {fileID: 1406743152}
   m_Layer: 0
-  m_Name: InventoryItem
+  m_Name: InventoryItem_Pencil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3140,7 +3140,7 @@ GameObject:
   - 61: {fileID: 1594701084}
   - 50: {fileID: 1594701083}
   m_Layer: 0
-  m_Name: InventoryItem
+  m_Name: InventoryItem_Spring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -33,7 +33,6 @@ public class PlayButtonScript : MonoBehaviour {
 				else
 				{
 					GameController.resetLevel();
-					
 					spRender.sprite = playSprite;
 				}
 			}

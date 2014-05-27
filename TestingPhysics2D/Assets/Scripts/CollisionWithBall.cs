@@ -27,7 +27,7 @@ public class CollisionWithBall : MonoBehaviour {
 			// play sparkle for 0.5 seconds after coin is collected
 			GameObject clone = (GameObject) Instantiate(sparkleObject, transform.position, transform.rotation);
 			clone.SetActive(true);
-			Destroy (clone, 0.5f);
+			Destroy (clone, 0.35f);
 		}
 	}
 }

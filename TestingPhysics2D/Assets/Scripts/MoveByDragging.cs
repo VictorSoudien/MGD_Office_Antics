@@ -4,10 +4,10 @@ using System.Collections;
 public class MoveByDragging : MonoBehaviour {
 
 	public bool isMovable;
-
+	public static GameObject selectionCircle;
+	
 	private Animator animator;
 	private bool selected;
-	private GameObject selectionCircle;
 	
 	private BoxCollider2D touchCollider;
 	private Collider2D physicsCollider;
@@ -20,9 +20,10 @@ public class MoveByDragging : MonoBehaviour {
 		selected = false;
 		isMovable = true;
 		target = Vector3.zero;
-		
-		selectionCircle = GameObject.Find ("SelectionCircle");
-		
+
+		if (selectionCircle == null) {
+			selectionCircle = GameObject.Find ("SelectionCircle");
+		}
 		// Due to the wind zone, fans need to be handled differently
 		if (!this.name.Equals("Fan"))
 		{

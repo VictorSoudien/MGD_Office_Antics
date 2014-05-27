@@ -18,7 +18,7 @@ public class RotateObject : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Input.GetButton("Fire1") == true)
+		if (Input.GetButton("Fire1") && selectedGameObject != null)
 		{
 			Vector3 target = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			Vector2 touch2D = new Vector2 (target.x, target.y);

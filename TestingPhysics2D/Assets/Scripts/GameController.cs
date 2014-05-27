@@ -27,10 +27,15 @@ public class GameController : MonoBehaviour
 	private static AudioSource levelCompleteSrc;
 
 	private static int indexOfNextLevel;
-	
+
+	private static bool isTrial;
+	public static bool IsTrial {
+		get{return isTrial;}
+		set{isTrial = value;}
+	}
+
 	// Used to track if another inventory item is selected
 	private static bool itemSelected;
-	
 	public static bool ItemSelected
 	{
 		get{return itemSelected;}
@@ -73,6 +78,7 @@ public class GameController : MonoBehaviour
 		initBinPosition = bin.transform.position;
 		
 		bin.rigidbody2D.isKinematic = true;
+		isTrial = false;
 		itemSelected = false;
 
 		//Destroys game objects from previous level no longer in use
@@ -86,6 +92,7 @@ public class GameController : MonoBehaviour
 	// Allows gravity to act on the ball
 	public static void runTrial()
 	{
+		isTrial = true;
 		bin.rigidbody2D.isKinematic = false;
 		ball.rigidbody2D.isKinematic = false;
 		selectionCircle.SetActive(false);
@@ -94,13 +101,17 @@ public class GameController : MonoBehaviour
 
 		foreach (GameObject gameObj in placedInventory)
 		{
-			gameObj.GetComponent<MoveByDragging>().isMovable = false;
+			MoveByDragging m = gameObj.GetComponent<MoveByDragging>();
+			if (m) {
+				m.isMovable = false;
+			}
 		}
 	}
 	
 	// Resets the level in terms of ball posistion and  coins
 	public static void resetLevel()
 	{
+		isTrial = false;
 		SpringController.releaseControlOfBall();
 		bin.rigidbody2D.isKinematic = true;
 		selectionCircle.SetActive(true);
@@ -124,7 +135,10 @@ public class GameController : MonoBehaviour
 
 		foreach (GameObject gameObj in placedInventory)
 		{
-			gameObj.GetComponent<MoveByDragging>().isMovable = true;
+			MoveByDragging m = gameObj.GetComponent<MoveByDragging>();
+			if (m) {
+				m.isMovable = true;
+			}
 		}
 		
 		tempCoins = 0;

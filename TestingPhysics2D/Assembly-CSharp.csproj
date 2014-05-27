@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\CreateInventoryItem.cs" />
      <Compile Include="Assets\Scripts\FollowBall.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\InventoryItem.cs" />
      <Compile Include="Assets\Scripts\MoveByDragging.cs" />
      <Compile Include="Assets\Scripts\MyComponent.cs" />
      <Compile Include="Assets\Scripts\PlayButtonScript.cs" />

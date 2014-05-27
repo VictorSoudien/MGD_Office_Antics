@@ -175,7 +175,7 @@ GameObject:
   - 60: {fileID: 148713230}
   - 114: {fileID: 148713229}
   m_Layer: 0
-  m_Name: PipeGreen_accelerator
+  m_Name: PipeGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,7 +423,7 @@ GameObject:
   - 50: {fileID: 284145268}
   - 60: {fileID: 284145267}
   m_Layer: 0
-  m_Name: PipeGreen
+  m_Name: PipeGreen_accelerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -493,7 +493,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_SortingLayerID: 2043110373
-  m_Sprite: {fileID: 21300000, guid: 174b51f173a7ac545924383b50b7d94a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b74f11dd041fc024abaef39e04fd9658, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &284145270
 Transform:
@@ -502,7 +502,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 284145266}
   m_LocalRotation: {x: 0, y: 0, z: .866025448, w: .49999997}
-  m_LocalPosition: {x: 8.17665958, y: 3.03221512, z: 0}
+  m_LocalPosition: {x: 7.63851404, y: 4.40543842, z: 0}
   m_LocalScale: {x: .150000006, y: .150000006, z: .150000006}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1201,7 +1201,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 905695217}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.79839611, y: 1.94105172, z: 0}
+  m_LocalPosition: {x: 5.68705416, y: 3.36994219, z: 0}
   m_LocalScale: {x: 2.9000001, y: 2.9000001, z: 2.9000001}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2880,7 +2880,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1842457138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.47417593, y: 4.20933199, z: 10}
+  m_LocalPosition: {x: 2.31740999, y: 4.26500273, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1544050315}
